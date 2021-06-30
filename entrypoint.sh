@@ -28,7 +28,13 @@ socket options = TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192
 local master = no
 dns proxy = no
 client min protocol = NT1
-log level = 1 winbind:5
+server min protocol = NT1
+ntlm auth = ntlmv1-permitted
+syslog = 0
+debug level = 2
+log file = /var/log/samba/%m.log
+max log size = 1024
+panic action = /usr/share/samba/panic-action %
 EOT
 
   while getopts ":u:s:h" opt; do
