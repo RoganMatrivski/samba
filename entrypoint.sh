@@ -27,6 +27,8 @@ map to guest = bad user
 socket options = TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192
 local master = no
 dns proxy = no
+client min protocol = NT1
+log level = 1 winbind:5
 EOT
 
   while getopts ":u:s:h" opt; do
